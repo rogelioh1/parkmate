@@ -1,3 +1,5 @@
+//main controller page, extends to other pages
+
 package com.example;
 
 import javafx.application.Application;
@@ -32,8 +34,8 @@ new SecondPage(stage);
 //control the position via padding of button; enclose it in its own box
 VBox nextScreenBox = new VBox(continueToNextScreen);
 // nextScreenBox.setPadding(new Insets(0, 0, 0, 300));
-VBox layoutContainer = new VBox(justTitle, nextScreenBox);
-// scene = new Scene(layoutContainer, 800, 600);
+VBox layoutContainer = new VBox(continueToNextScreen);
+scene = new Scene(layoutContainer, 800, 600);
 stage.setScene(scene);
 stage.show();
 }
