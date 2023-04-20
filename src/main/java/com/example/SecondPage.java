@@ -1,4 +1,5 @@
 //2 login page
+//has utrgv logo 
 //features a text field with a button that proceeds to next page
 
 package com.example;
@@ -8,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 public class SecondPage {
-	public SecondPage(Stage oldStage)
+	public SecondPage(Stage oldStage) //oldStage == stage1
 	{
 	Stage newStage = new Stage();
 	newStage.setTitle("Login Page");

@@ -15,30 +15,44 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import java.io.IOException;
 public class App extends Application {
-    private static Scene scene;
-    public static Label splashTitle;
-    
+    private static Stage stage;
+    private static Scene scene1; //login scene
+    private static Scene scene2; // homescreen, user has already logged in in scene 1
+    private static Scene scene3;
+    private static Scene scene4;
+    private static Scene scene5;
+    // public static Label loginPage;
     @Override
-    public void start(Stage stage) throws IOException {
-    stage.setTitle("SplashScreen");
-    splashTitle = new Label("ParkMate");
-    splashTitle.setStyle("-fx-font-size:24px");
-    VBox justTitle = new VBox(splashTitle);
-//After splash screen button
-Button continueToNextScreen = new Button("Continue");
-continueToNextScreen.setStyle("-fx-background-color: black; -fx-text-fill:white; -fx-font-size: 16px");
-continueToNextScreen.setOnAction(e ->
-{
-new SecondPage(stage);
-});
-//control the position via padding of button; enclose it in its own box
-VBox nextScreenBox = new VBox(continueToNextScreen);
-// nextScreenBox.setPadding(new Insets(0, 0, 0, 300));
-VBox layoutContainer = new VBox(continueToNextScreen);
-scene = new Scene(layoutContainer, 800, 600);
-stage.setScene(scene);
-stage.show();
-}
+    //start method takes 
+    public void start(Stage mainStage)
+    {
+        
+        stage = mainStage;
+        mainStage.setTitle("Login Screen");
+        showScene1();
+    }
+    
+    
+    //scence 1, default, log in screen
+    private void showScene1()
+    {
+        Button loginBtn = new Button("LOG IN"); //will listen for click and then go to scene 2
+        loginBtn.setOnAction(e-> showScene2()); //scnence 2 will be homescreen 
+        VBox screen1 = new VBox(loginBtn);
+        scene1 = new Scene(screen1, 400, 400);
+        stage.setScene(scene1);
+        stage.show();
+        
+    }
+    private void showScene2()
+    {
+        Button checkAvailLotsBtn = new Button("Check available lots");
+        Button signOutBtn = new Button("SIGN OUT");
+         VBox screen2 = new VBox(signOutBtn, checkAvailLotsBtn);
+        scene2 = new Scene(screen2, 800, 400);
+        stage.setScene(scene2);
+        stage.show();
+    }
 public static void main(String[] args) {
 launch();
 }
