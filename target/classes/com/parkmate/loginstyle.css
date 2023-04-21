@@ -1,0 +1,26 @@
+.text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.tab-center .tab-header-area {
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+    -fx-tab-min-width: 80;
+    -fx-tab-max-width: 120;
+    -fx-tab-min-height: 50;
+    -fx-tab-max-height: 50;
+    -fx-tab-spacing: 10;
+    -fx-tab-content-spacing: 0;
+}
+
+.tab-center .tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: white transparent transparent transparent;
+}
