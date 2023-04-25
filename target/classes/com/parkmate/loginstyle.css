@@ -18,9 +18,15 @@
     -fx-tab-max-height: 50;
     -fx-tab-spacing: 10;
     -fx-tab-content-spacing: 0;
+    -fx-border-radius: 20 20 20 20;
 }
 
 .tab-center .tab:selected {
     -fx-background-color: white;
     -fx-border-color: white transparent transparent transparent;
 }
+
+.tab {
+-fx-border-radius: 20 20 0 0;
+}
+

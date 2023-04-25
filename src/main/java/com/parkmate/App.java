@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.scene.layout.*;
 
 public class App extends Application {
     private static Stage stage;
@@ -57,6 +58,34 @@ public class App extends Application {
         stage.setScene(scene2);
         stage.show();
     }
+
+    private void showScene3() // show lots
+    {
+//        availLotsHeader.setText("Available Slots:"); //center this
+        String[] lots = {"Lot 1", "Lot 2", "Lot 3", "Lot 4", "Lot5"};
+        VBox lotBtnContainer = new VBox();
+        for (String lot : lots) {
+            Button lotBtn = new Button(lot);
+//            lotBtn.setOnAction(e -> handleButtonClick(lotBtn));
+            lotBtnContainer.getChildren().add(lotBtn);
+        }
+        Button testo = new Button();
+        testo.setText("Total Slots: 500 \nSlots available: " + parkinglot.getTotalSlots());
+        VBox parkingLotScreen = new VBox(testo);
+        scene3 = new Scene(parkingLotScreen, 800, 400);
+        stage.setScene(scene3);
+        stage.show();
+
+    }
+    //    private void showScene4() //show lots and zones
+//    {
+//
+//        Button testo1 = new Button();
+//        VBox lotAndZonesScreen = new VBox(testo1);
+//        scene4 = new Scene(lotAndZonesScreen);
+//
+//
+//    }
     public static void main(String[] args) {
         launch();
     }

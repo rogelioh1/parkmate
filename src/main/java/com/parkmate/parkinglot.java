@@ -1,17 +1,29 @@
 package com.parkmate;
+import java.util.Random;
 
 public class parkinglot {
-    int capacity;
-    int currentOccupancy;
-    int occupancyRate;
-    String lotName;
-    int zone;
-    public parkinglot(int zone, int capacity, int currentOccupancy, String lotName) {
-        this.zone = zone;
-        this.capacity = capacity;
-        this.currentOccupancy = currentOccupancy;
-        this.lotName = lotName;
+    private int lots = 5;
+
+    public parkinglot(int _lots)
+    {
+        this.lots = _lots;
+    }
+
+    public static int totalSlots = 500; //starts at 500, then gets updated when getTotalSlots is run
+    // meaning that there's always going to be some occupency, make it realistic
+    public static void createButtons()
+    {
+
+    }
+    public static String getTotalSlots()
+    {
+        Random randomNum = new Random();
+        int occupancyNum = randomNum.nextInt(500);
+        String occupancyStr = "";
+        occupancyStr += occupancyNum;
+        totalSlots = occupancyNum;
+        return occupancyStr;
+
     }
 
 }
-

@@ -1,48 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <StackPane focusTraversable="true" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" focusTraversable="true" prefHeight="830.0" prefWidth="501.0">
+      <HBox alignment="CENTER" focusTraversable="true">
          <children>
-            <VBox alignment="CENTER" prefHeight="838.0" prefWidth="501.0">
+            <VBox alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="501.0" style="-fx-border-radius: 20; -fx-background-color: grey;">
-                     <children>
-                        <Label prefHeight="83.0" prefWidth="200.0" text="ParkMate" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="28.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="501.0" style="-fx-border-radius: 20; -fx-background-color: #5E5F5F;">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@parkmatewhite.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
                   </HBox>
-                  <TabPane prefHeight="764.0" prefWidth="501.0" side="BOTTOM" styleClass="tab-center" stylesheets="@loginstyle.css" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane side="BOTTOM" styleClass="tab-center" stylesheets="@loginstyle.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="250.0" tabMaxWidth="250.0" tabMinHeight="30.0" tabMinWidth="220.0">
                     <tabs>
                       <Tab text="Lot List">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="665.0" prefWidth="501.0">
                                  <children>
-                                    <ScrollPane prefHeight="731.0" prefWidth="501.0">
+                                    <ScrollPane focusTraversable="false" prefHeight="731.0" prefWidth="501.0">
                                       <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="733.0" prefWidth="501.0">
                                              <children>
@@ -61,6 +58,9 @@
                         </content>
                       </Tab>
                     </tabs>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </TabPane>
                </children>
             </VBox>
