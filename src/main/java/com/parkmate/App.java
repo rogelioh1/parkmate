@@ -20,6 +20,9 @@ public class App extends Application {
     private static Scene scene5;
 
     @FXML private TextField username_textfield; //login page
+    @FXML public Button lot1button;
+    @FXML public Button lot2button;
+
     @FXML
     private void openmainmenu(ActionEvent event) throws IOException { //login button opens main menu only if username is not empty
         event.consume();
