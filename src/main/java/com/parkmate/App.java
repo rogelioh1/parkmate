@@ -49,8 +49,8 @@ public class App extends Application {
         mainController = loader2.getController();
         mainController.setApp(this);
         mainController.setButtonText("Hello World");  //this is how you would edit an fxml variable in this main file
-        mainController.load_url("https://www.utrgv.edu/parking-and-transportation-services/parking-services/index.htm");
-
+        mainController.load_map();
+        mainController.load_services();
         scene2 = new Scene(root, 480, 750);
         stage.setTitle("ParkMate");
         stage.setScene(scene2);

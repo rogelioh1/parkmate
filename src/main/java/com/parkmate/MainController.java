@@ -17,11 +17,18 @@ public class MainController {
     private Button lot1button;
     @FXML private WebView webmap;
 
-    public void load_url(String url) throws IOException {
+    @FXML private WebView parking_services;
+
+    public void load_map() throws IOException {
         WebEngine webEngine = webmap.getEngine();
         webEngine.setJavaScriptEnabled(true);
-        webmap.getEngine().load(url);
+        webmap.getEngine().load("https://www.google.com/maps/d/embed?mid=1PYwVoz0QVNU9oTxg9IIuuLcXNW0&ehbc=2E312F"); //loads google map
+    }
 
+    public void load_services() {
+        WebEngine webEngine = parking_services.getEngine();
+        webEngine.setJavaScriptEnabled(true);
+        parking_services.getEngine().load("https://www.utrgv.edu/parking-and-transportation-services/parking-services/index.htm"); //loads parking services webpage
     }
 
     public void setButtonText(String hello) throws IOException {
