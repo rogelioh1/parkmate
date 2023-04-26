@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane focusTraversable="true" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.parkmate.App">
+<StackPane focusTraversable="true" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.parkmate.LoginController">
    <children>
       <HBox alignment="CENTER" focusTraversable="true" prefHeight="830.0" prefWidth="501.0">
          <children>
