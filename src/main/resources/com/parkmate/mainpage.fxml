@@ -13,20 +13,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
 <StackPane focusTraversable="true" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.parkmate.MainController">
    <children>
-      <HBox alignment="CENTER" focusTraversable="true">
+      <HBox alignment="CENTER" focusTraversable="true" style="-fx-background-color: grey;" StackPane.alignment="TOP_CENTER">
          <children>
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" HBox.hgrow="NEVER">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="501.0" style="-fx-border-radius: 20; -fx-background-color: #5E5F5F;">
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="85.0" style="-fx-border-radius: 20; -fx-background-color: #5E5F5F;" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="28.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="27.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@parkmatewhite.png" />
                            </image>
@@ -36,27 +37,51 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <TabPane side="BOTTOM" styleClass="tab-center" stylesheets="@loginstyle.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="250.0" tabMaxWidth="250.0" tabMinHeight="30.0" tabMinWidth="220.0">
+                  <TabPane focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="665.0" prefWidth="488.0" side="BOTTOM" styleClass="tab-center" stylesheets="@loginstyle.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="250.0" tabMaxWidth="250.0" tabMinHeight="30.0" tabMinWidth="140.0" VBox.vgrow="ALWAYS">
                     <tabs>
                       <Tab text="Lot List">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="665.0" prefWidth="501.0">
+                          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                                  <children>
-                                    <Pane layoutX="-1.0" layoutY="552.0" prefHeight="113.0" prefWidth="501.0">
+                                    <Pane layoutX="-1.0" layoutY="559.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="73.0" prefWidth="488.0" style="-fx-background-color: #cccccc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                        <children>
-                                          <Label fx:id="lot_info_textdisplay" layoutX="14.0" layoutY="32.0" prefHeight="44.0" prefWidth="112.0" text="Lot X" />
-                                          <Button fx:id="checkinbutton" layoutX="347.0" layoutY="32.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" text="Check In" />
-                                          <Label fx:id="lot_info_spacesdisplay" layoutX="158.0" layoutY="34.0" prefHeight="40.0" prefWidth="137.0" text="X/Y Spaces Available" />
+                                          <Label fx:id="lot_info_textdisplay" layoutX="22.0" layoutY="15.0" prefHeight="44.0" prefWidth="112.0" text="Lot X">
+                                             <font>
+                                                <Font name="System Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="checkinbutton" layoutX="334.0" layoutY="12.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: DE4B2A;" text="Check In" textFill="WHITE">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Button>
+                                          <Label fx:id="lot_info_spacesdisplay" layoutX="134.0" layoutY="17.0" prefHeight="40.0" prefWidth="159.0" text="X/Y Spaces Available">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
                                        </children>
                                     </Pane>
-                                    <ScrollPane focusTraversable="false" prefHeight="559.0" prefWidth="501.0">
+                                    <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" pannable="true" prefHeight="559.0" prefWidth="488.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="503.0">
+                                        <AnchorPane prefHeight="557.0" prefWidth="497.0" style="-fx-background-color: white;">
                                              <children>
-                                                <Button fx:id="lot1button" layoutX="37.0" layoutY="14.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="413.0" text="Lot 1" />
-                                                <Button fx:id="lot2button" layoutX="37.0" layoutY="90.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="413.0" text="Lot 2" />
-                                                <Button fx:id="lot3button" layoutX="37.0" layoutY="173.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="413.0" text="Lot 3" />
-                                                <Button fx:id="lot4button" layoutX="37.0" layoutY="257.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="413.0" text="Lot 4" />
+                                                <Button fx:id="lot1button" layoutX="37.0" layoutY="27.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="410.0" text="Lot 1">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font></Button>
+                                                <Button fx:id="lot2button" layoutX="37.0" layoutY="110.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="410.0" text="Lot 2">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font></Button>
+                                                <Button fx:id="lot3button" layoutX="37.0" layoutY="194.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="410.0" text="Lot 3">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font></Button>
+                                                <Button fx:id="lot4button" layoutX="37.0" layoutY="279.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="410.0" text="Lot 4">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font></Button>
                                              </children>
                                           </AnchorPane>
                                       </content>
@@ -67,12 +92,33 @@
                       </Tab>
                       <Tab text="Campus Map">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="501.0">
+                          <AnchorPane fx:id="webpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                                  <children>
-                                    <WebView fx:id="webmap" prefHeight="665.0" prefWidth="501.0" />
+                                    <ScrollPane hbarPolicy="ALWAYS" pannable="true" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="638.0" prefWidth="811.0">
+                                             <children>
+                                                <ImageView fitHeight="629.0" fitWidth="824.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-4.0">
+                                                   <image>
+                                                      <Image url="@volt_map.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
                                  </children></AnchorPane>
                         </content>
                       </Tab>
+                        <Tab text="Parking Services">
+                           <content>
+                              <AnchorPane fx:id="webpane1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="625.0" prefWidth="482.0">
+                                 <children>
+                                    <WebView fx:id="webmap" prefHeight="631.0" prefWidth="488.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
                     </tabs>
                      <VBox.margin>
                         <Insets />

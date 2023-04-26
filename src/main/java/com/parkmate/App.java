@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.scene.layout.*;
@@ -23,6 +24,8 @@ public class App extends Application {
     //start method takes
     public void start(Stage mainStage) throws IOException {
         stage = mainStage;
+        stage.getIcons().add(new Image("file:src/main/resources/com/parkmate/parking-symbol.png"));
+
         showScene1();
     }
 
@@ -33,7 +36,7 @@ public class App extends Application {
         loginController = loader.getController();
         loginController.setApp(this);
 
-        Scene scene = new Scene(root, 480, 720);
+        Scene scene = new Scene(root, 480, 750);
         root.requestFocus();
         stage.setTitle("Login");
         stage.setScene(scene);
@@ -46,9 +49,9 @@ public class App extends Application {
         mainController = loader2.getController();
         mainController.setApp(this);
         mainController.setButtonText("Hello World");  //this is how you would edit an fxml variable in this main file
-        mainController.load_url("https://www.google.com");
+        mainController.load_url("https://www.utrgv.edu/parking-and-transportation-services/parking-services/index.htm");
 
-        scene2 = new Scene(root, 480, 720);
+        scene2 = new Scene(root, 480, 750);
         stage.setTitle("ParkMate");
         stage.setScene(scene2);
         stage.show();
