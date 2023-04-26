@@ -48,7 +48,7 @@ public class App extends Application {
         Parent root = loader2.load();
         mainController = loader2.getController();
         mainController.setApp(this);
-        mainController.setButtonText("Hello World");  //this is how you would edit an fxml variable in this main file
+        mainController.setButton1Text("Hello World");  //this is how you would edit an fxml variable in this main file
         mainController.load_map();
         mainController.load_services();
         scene2 = new Scene(root, 480, 750);

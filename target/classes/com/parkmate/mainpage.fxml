@@ -37,7 +37,7 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <TabPane focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="665.0" prefWidth="488.0" side="BOTTOM" styleClass="tab-center" stylesheets="@loginstyle.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="250.0" tabMaxWidth="250.0" tabMinHeight="30.0" tabMinWidth="140.0" VBox.vgrow="ALWAYS">
+                  <TabPane focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="665.0" prefWidth="488.0" side="BOTTOM" styleClass="tab-center" stylesheets="@loginstyle.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="250.0" tabMaxWidth="250.0" tabMinHeight="30.0" tabMinWidth="142.0" VBox.vgrow="ALWAYS">
                     <tabs>
                       <Tab text="Lot List">
                         <content>
@@ -94,19 +94,7 @@
                         <content>
                           <AnchorPane fx:id="webpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                                  <children>
-                                    <ScrollPane hbarPolicy="ALWAYS" pannable="true" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                      <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="638.0" prefWidth="811.0">
-                                             <children>
-                                                <ImageView fitHeight="629.0" fitWidth="824.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-4.0">
-                                                   <image>
-                                                      <Image url="@volt_map.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </children>
-                                          </AnchorPane>
-                                      </content>
-                                    </ScrollPane>
+                                    <WebView fx:id="webmap" prefHeight="631.0" prefWidth="488.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children></AnchorPane>
                         </content>
                       </Tab>
@@ -114,7 +102,7 @@
                            <content>
                               <AnchorPane fx:id="webpane1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="625.0" prefWidth="482.0">
                                  <children>
-                                    <WebView fx:id="webmap" prefHeight="631.0" prefWidth="488.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <WebView fx:id="parking_services" prefHeight="631.0" prefWidth="488.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                            </content>
