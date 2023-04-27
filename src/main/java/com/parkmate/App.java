@@ -14,9 +14,6 @@ public class App extends Application {
     private static Stage stage;
     private static Scene scene1; //login scene
     private static Scene scene2; // homescreen, user has already logged in in scene 1
-    private static Scene scene3;
-    private static Scene scene4;
-    private static Scene scene5;
     private LoginController loginController;
     private MainController mainController;
     public String username;

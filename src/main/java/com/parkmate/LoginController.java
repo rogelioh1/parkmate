@@ -30,7 +30,21 @@ public class LoginController {
             alert.setTitle("Error");
             alert.setHeaderText("Username cannot be empty");
             alert.showAndWait();
-        } else {
+        }
+        else if (username.length() < 5) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Username must be at least 5 characters long");
+            alert.showAndWait();
+        }
+        else if (!username.matches("^(?=.*[0-9])[a-zA-Z0-9]+$"))
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Username can only contain letters and numbers");
+            alert.showAndWait();
+        }
+        else {
             app.showScene2();
             app.login(username); //sets username for use in next scene
         }
