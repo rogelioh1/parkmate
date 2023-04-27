@@ -19,14 +19,19 @@ public class App extends Application {
     private static Scene scene5;
     private LoginController loginController;
     private MainController mainController;
+    public String username;
 
     @Override
     //start method takes
     public void start(Stage mainStage) throws IOException {
         stage = mainStage;
         stage.getIcons().add(new Image("file:src/main/resources/com/parkmate/parking-symbol.png"));
-
         showScene1();
+    }
+
+    public void login(String username) {
+        this.username = username;
+        mainController.setUsername(username);
     }
 
     //scene 1, default, log in screen
@@ -35,7 +40,7 @@ public class App extends Application {
         Parent root = loader.load();
         loginController = loader.getController();
         loginController.setApp(this);
-        Scene scene = new Scene(root, 480, 750);
+        Scene scene = new Scene(root, 488, 750);
         root.requestFocus();
         stage.setTitle("Login");
         stage.setScene(scene);
@@ -50,15 +55,10 @@ public class App extends Application {
         mainController.setbuttonnames();
         mainController.load_map();
         mainController.load_services();
-        scene2 = new Scene(root, 480, 750);
+        scene2 = new Scene(root, 488, 750);
         stage.setTitle("ParkMate");
         stage.setScene(scene2);
         stage.show();
-    }
-
-    public void showScene3() // show lots
-    {
-
     }
 
     public static void main(String[] args) {

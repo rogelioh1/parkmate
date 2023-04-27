@@ -7,14 +7,18 @@ import javafx.scene.control.*;
 import java.io.IOException;
 
 public class LoginController {
-
     private App app;
 
     public void setApp(App app) {
         this.app = app;
     }
+
     @FXML
     private TextField username_textfield;
+
+    public String getUsername() {
+        return username_textfield.getText();
+    }
 
     public void openmainmenu(ActionEvent event) throws IOException {
         event.consume();
@@ -28,6 +32,7 @@ public class LoginController {
             alert.showAndWait();
         } else {
             app.showScene2();
+            app.login(username); //sets username for use in next scene
         }
     }
 }

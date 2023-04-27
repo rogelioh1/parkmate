@@ -19,27 +19,25 @@
     -fx-tab-max-height: 50;
     -fx-tab-spacing: 10;
     -fx-tab-content-spacing: 0;
-    -fx-border-radius: 20 20 20 20;
 }
 
-.tab-center .tab:selected {
-    -fx-background-color: white;
-    -fx-border-color: white transparent transparent transparent;
+.tab-header-background {
+    -fx-background-color:transparent
+}
+
+.tab-pane{
+    -fx-padding: 0 -1 -1 0
+}
+
+.tab-down-button {
+-fx-padding: 0;
+}
+
+.tab-down-button .arrow {
+-fx-padding: 0;
 }
 
 .tab {
--fx-border-radius: 20 20 0 0;
+    -fx-background-color:  #cccccc;
 }
-
-.tab-pane .tab
-{
-    -fx-pref-width: 150.0;
-}
-
-.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
-    -fx-alignment: CENTER;
-     -fx-pref-width: 150.0;
-    -fx-text-fill: -fx-text-base-color;
-}
-
 
