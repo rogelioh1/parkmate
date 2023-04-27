@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -22,67 +23,78 @@
 <StackPane focusTraversable="true" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.parkmate.MainController">
    <children>
       <Button mnemonicParsing="false" text="Button" />
-      <HBox fx:id="mainpageitems" alignment="CENTER" focusTraversable="true" style="-fx-background-color: grey;" StackPane.alignment="TOP_CENTER">
+      <HBox fx:id="mainpageitems" alignment="CENTER" style="-fx-background-color: grey;" StackPane.alignment="TOP_CENTER">
          <children>
             <VBox alignment="CENTER" style="-fx-background-color: white;" HBox.hgrow="NEVER">
                <children>
-                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="60.0" style="-fx-border-radius: 20; -fx-background-color: #5E5F5F;" VBox.vgrow="ALWAYS">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <children>
-                        <ImageView fitHeight="31.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@parkmatewhite.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
+                  <BorderPane prefHeight="60.0" style="-fx-background-color: #646469;">
+                     <right>
+                        <Button fx:id="logoutbutton" alignment="TOP_LEFT" contentDisplay="CENTER" focusTraversable="false" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handlelogout" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: F05023; -fx-background-radius: 10;" textFill="WHITE" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets right="20.0" />
+                           </BorderPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </right>
+                     <center>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="31.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
+                                 <image>
+                                    <Image url="@parkmatewhite.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="73.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </center>
+                  </BorderPane>
                   <TabPane focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="665.0" prefWidth="488.0" side="BOTTOM" style="-fx-background-color: white;" styleClass="tab-center" stylesheets="@loginstyle.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="250.0" tabMaxWidth="250.0" tabMinHeight="30.0" tabMinWidth="145.0" VBox.vgrow="ALWAYS">
                     <tabs>
                       <Tab text="Lot List">
                         <content>
-                          <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                          <AnchorPane>
                                  <children>
                                     <Pane layoutX="-1.0" layoutY="559.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="73.0" prefWidth="488.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20 20 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0">
                                        <children>
-                                          <Label fx:id="lot_info_textdisplay" layoutX="20.0" layoutY="15.0" prefHeight="44.0" prefWidth="112.0" text="Lot X">
+                                          <Label fx:id="lot_info_textdisplay" focusTraversable="false" layoutX="20.0" layoutY="15.0" prefHeight="44.0" prefWidth="112.0" text="Lot X">
                                              <font>
                                                 <Font name="System Bold Italic" size="24.0" />
                                              </font>
                                           </Label>
-                                          <Button fx:id="checkinbutton" layoutX="340.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleCheckIn" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: DE4B2A; -fx-background-radius: 20;" text="Check In" textFill="WHITE">
+                                          <Button fx:id="checkinbutton" focusTraversable="false" layoutX="340.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleCheckIn" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: F05023; -fx-background-radius: 20;" text="Check In" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold Italic" size="22.0" />
                                              </font>
                                           </Button>
-                                          <Label fx:id="lot_info_spacesdisplay" layoutX="126.0" layoutY="17.0" prefHeight="40.0" prefWidth="205.0" text="(Select a lot)">
+                                          <Label fx:id="lot_info_spacesdisplay" focusTraversable="false" layoutX="126.0" layoutY="17.0" prefHeight="40.0" prefWidth="205.0" text="(Select a lot)">
                                              <font>
                                                 <Font name="System Bold Italic" size="16.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </Pane>
-                                    <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="488.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <ScrollPane fx:id="scrollpane" fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" prefHeight="562.0" prefWidth="489.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <content>
-                                        <AnchorPane prefHeight="518.0" prefWidth="487.0" style="-fx-background-color: white;">
+                                        <AnchorPane prefHeight="565.0" prefWidth="487.0" style="-fx-background-color: white;">
                                              <children>
-                                                <Button fx:id="lot1button" layoutX="37.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleLot1" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 1">
+                                                <Button fx:id="lot1button" focusTraversable="false" layoutX="38.0" layoutY="377.0" mnemonicParsing="false" onAction="#handleLot1" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 1">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font></Button>
-                                                <Button fx:id="lot2button" layoutX="37.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleLot2" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 2">
+                                                <Button fx:id="lot2button" focusTraversable="false" layoutX="38.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleLot2" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 2">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font></Button>
-                                                <Button fx:id="lot3button" layoutX="37.0" layoutY="194.0" mnemonicParsing="false" onAction="#handleLot3" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 3">
+                                                <Button fx:id="lot3button" focusTraversable="false" layoutX="38.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleLot3" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 3">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font></Button>
-                                                <Button fx:id="lot4button" layoutX="37.0" layoutY="279.0" mnemonicParsing="false" onAction="#handleLot4" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 4">
+                                                <Button fx:id="lot4button" focusTraversable="false" layoutX="38.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleLot4" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 4">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font></Button>
@@ -90,6 +102,11 @@
                                           </AnchorPane>
                                       </content>
                                     </ScrollPane>
+                                    <Label fx:id="welcometext" alignment="CENTER" focusTraversable="false" prefHeight="31.0" prefWidth="488.0" style="-fx-background-color: #646469; -fx-background-radius: 0 0 20 20;" text="Welcome" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold Italic" size="16.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                         </content>
@@ -149,7 +166,7 @@
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Button fx:id="checkoutbutton" alignment="CENTER" mnemonicParsing="false" onAction="#handleCheckOut" prefHeight="93.0" prefWidth="294.0" style="-fx-background-color: #DE4B2A; -fx-background-radius: 20;" text="Check Out" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="checkoutbutton" alignment="CENTER" mnemonicParsing="false" onAction="#handleCheckOut" prefHeight="93.0" prefWidth="294.0" style="-fx-background-color: F05023; -fx-background-radius: 20;" text="Check Out" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold Italic" size="26.0" />
                      </font>

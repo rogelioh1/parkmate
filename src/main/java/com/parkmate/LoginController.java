@@ -3,6 +3,7 @@ package com.parkmate;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.*;
 
 import java.io.IOException;
 
@@ -18,6 +19,14 @@ public class LoginController {
 
     public String getUsername() {
         return username_textfield.getText();
+    }
+
+    @FXML
+    public void buttonPressed(KeyEvent e) throws IOException { //enter key can be used to log in instead of sign in button
+        if(e.getCode().toString().equals("ENTER"))
+        {
+            openmainmenu(new ActionEvent());
+        }
     }
 
     public void openmainmenu(ActionEvent event) throws IOException {
@@ -45,8 +54,9 @@ public class LoginController {
             alert.showAndWait();
         }
         else {
+            app.login(username);
             app.showScene2();
-            app.login(username); //sets username for use in next scene
+ //sets username for use in next scene
         }
     }
 }
