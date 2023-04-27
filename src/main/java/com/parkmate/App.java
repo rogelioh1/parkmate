@@ -13,7 +13,7 @@ import javafx.scene.layout.*;
 public class App extends Application {
     private static Stage stage;
     private static Scene scene1; //login scene
-    private static Scene scene2; // homescreen, user has already logged in in scene 1
+    private static Scene scene2; // home screen, user has already logged in in scene 1
     private LoginController loginController;
     private MainController mainController;
     public String username;
@@ -28,7 +28,6 @@ public class App extends Application {
 
     public void login(String username) {
         this.username = username;
-        mainController.setUsername(username);
     }
 
     //scene 1, default, log in screen
@@ -49,6 +48,7 @@ public class App extends Application {
         Parent root = loader2.load();
         mainController = loader2.getController();
         mainController.setApp(this);
+        mainController.setUsername(username);
         mainController.setbuttonnames();
         mainController.load_map();
         mainController.load_services();

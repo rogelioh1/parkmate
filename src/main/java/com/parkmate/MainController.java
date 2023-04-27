@@ -8,6 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.*;
 import java.io.IOException;
+import java.util.Optional;
 import java.util.Random;
 import javafx.scene.effect.BoxBlur;
 import javafx.animation.Animation;
@@ -19,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.web.*;
 import javafx.util.Duration;
+import javafx.scene.image.*;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -49,6 +51,15 @@ public class MainController {
     @FXML private Label checkintolabel;
     @FXML private Button checkoutbutton;
     @FXML private HBox mainpageitems;
+    @FXML private Label welcometext;
+    @FXML private Button logoutbutton;
+    @FXML private ScrollPane scrollpane;
+
+    String username;
+
+    public void setUsername(String name) { //username that was entered in login screen
+        username = name;
+    } //gets username from LoginController
 
     public void load_map() throws IOException {
         WebEngine webEngine = webmap.getEngine();
@@ -107,6 +118,15 @@ public class MainController {
             throw new RuntimeException(e);
         }
         checkinbutton.setStyle("-fx-background-color: grey; -fx-background-radius: 20;"); //sets the check in button to grey until a lot is selected
+        welcometext.setText("Welcome, " + username + "!"); //sets the welcome text to the username
+        Image image = new Image("file:src/main/resources/com/parkmate/login-white2.png");
+        ImageView imageView = new ImageView(image);
+        imageView.setPreserveRatio(true);
+        imageView.setFitHeight(logoutbutton.getPrefHeight());
+        imageView.setFitWidth(logoutbutton.getPrefWidth());
+        logoutbutton.setGraphic(imageView);
+        scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
 
     public void handleLot1 (ActionEvent event)
@@ -141,10 +161,20 @@ public class MainController {
         checkinbutton.setStyle("-fx-background-color: #DE4B2A; -fx-background-radius: 20;");
         currentlot = E34;
     }
-    String username;
 
-    public void setUsername(String name) { //username that was entered in login screen
-        username = name;
+    public void handlelogout (ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("Are you sure you want to logout?");
+        alert.setContentText("Press OK to logout, or cancel to stay logged in.");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            try {
+                app.showScene1();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public void handleCheckIn(ActionEvent event) throws IOException {
