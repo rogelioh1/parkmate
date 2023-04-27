@@ -2,28 +2,21 @@ package com.parkmate;
 import java.util.Random;
 
 public class parkinglot {
-    private int lots = 5;
+    String name;
+    int capacity;
+    int occupancy;
 
-    public parkinglot(int _lots)
+    public parkinglot(String _name, int spaces) //at declaration, generates random occupancy
     {
-        this.lots = _lots;
+        this.capacity = spaces;
+        this.name = _name;
+        this.occupancy = generate_Occupancy(capacity);
     }
 
-    public static int totalSlots = 500; //starts at 500, then gets updated when getTotalSlots is run
-    // meaning that there's always going to be some occupency, make it realistic
-    public static void createButtons()
+    public static int generate_Occupancy(int maxcapacity)
     {
-
+        Random rand = new Random();
+        int occupancy = rand.nextInt(maxcapacity + 1);// generates random occupancy based on max capacity
+        return occupancy;
     }
-    public static String getTotalSlots()
-    {
-        Random randomNum = new Random();
-        int occupancyNum = randomNum.nextInt(500);
-        String occupancyStr = "";
-        occupancyStr += occupancyNum;
-        totalSlots = occupancyNum;
-        return occupancyStr;
-
-    }
-
 }

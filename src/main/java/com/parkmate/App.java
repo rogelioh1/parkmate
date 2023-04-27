@@ -35,7 +35,6 @@ public class App extends Application {
         Parent root = loader.load();
         loginController = loader.getController();
         loginController.setApp(this);
-
         Scene scene = new Scene(root, 480, 750);
         root.requestFocus();
         stage.setTitle("Login");
@@ -48,7 +47,7 @@ public class App extends Application {
         Parent root = loader2.load();
         mainController = loader2.getController();
         mainController.setApp(this);
-        mainController.setButton1Text("Hello World");  //this is how you would edit an fxml variable in this main file
+        mainController.setbuttonnames();
         mainController.load_map();
         mainController.load_services();
         scene2 = new Scene(root, 480, 750);
@@ -59,20 +58,7 @@ public class App extends Application {
 
     public void showScene3() // show lots
     {
-//        availLotsHeader.setText("Available Slots:"); //center this
-        String[] lots = {"Lot 1", "Lot 2", "Lot 3", "Lot 4", "Lot5"};
-        VBox lotBtnContainer = new VBox();
-        for (String lot : lots) {
-            Button lotBtn = new Button(lot);
-//            lotBtn.setOnAction(e -> handleButtonClick(lotBtn));
-            lotBtnContainer.getChildren().add(lotBtn);
-        }
-        Button testo = new Button();
-        testo.setText("Total Slots: 500 \nSlots available: " + parkinglot.getTotalSlots());
-        VBox parkingLotScreen = new VBox(testo);
-        scene3 = new Scene(parkingLotScreen, 800, 400);
-        stage.setScene(scene3);
-        stage.show();
+
     }
 
     public static void main(String[] args) {

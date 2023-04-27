@@ -1,10 +1,12 @@
 package com.parkmate;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.*;
 import java.io.IOException;
+import java.util.Random;
 
 public class MainController {
 
@@ -21,8 +23,8 @@ public class MainController {
     @FXML private Button lot3button;
     @FXML private Button lot4button;
     @FXML private Button checkinbutton;
-    @FXML private Button lot_info_textdisplay;
-    @FXML private Button lot_info_spacesdisplay;
+    @FXML private Label lot_info_textdisplay;
+    @FXML private Label lot_info_spacesdisplay;
 
     public void load_map() throws IOException {
         WebEngine webEngine = webmap.getEngine();
@@ -48,4 +50,67 @@ public class MainController {
     public void setButton4Text(String hello) throws IOException {
         lot4button.setText(hello);
     }
+
+    //lot functions
+    private boolean checkinactivated = false; // if this is false, the check in button will be disabled (there is no lot selected)
+
+    parkinglot E16 = new parkinglot("Lot E16",400); //creates parking lots
+    parkinglot E19 = new parkinglot("Lot E19",300);
+    parkinglot E31 = new parkinglot("Lot E31",150);
+    parkinglot E34 = new parkinglot("Lot E34", 100);
+
+
+    void setbuttonnames() { //sets the names of buttons to the names of the lots
+        try {
+            setButton1Text(E16.name);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            setButton2Text(E19.name);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            setButton3Text(E31.name);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            setButton4Text(E34.name);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        checkinbutton.setStyle("-fx-background-color: grey; "); //sets the check in button to grey until a lot is selected
+    }
+
+    public void handleLot1 (ActionEvent event)
+    {
+        lot_info_textdisplay.setText(E16.name);
+        lot_info_spacesdisplay.setText(E16.occupancy + "/" + E16.capacity +" spaces occupied");
+        checkinactivated = true;
+        checkinbutton.setStyle("-fx-background-color: #DE4B2A; "); //sets the check in button to orange
+    }
+    public void handleLot2 (ActionEvent event)
+    {
+        lot_info_textdisplay.setText(E19.name);
+        lot_info_spacesdisplay.setText(E19.occupancy + "/" + E19.capacity +" spaces occupied");
+        checkinactivated = true;
+        checkinbutton.setStyle("-fx-background-color: #DE4B2A; ");
+    }
+    public void handleLot3 (ActionEvent event)
+    {
+        lot_info_textdisplay.setText(E31.name);
+        lot_info_spacesdisplay.setText(E31.occupancy + "/" + E31.capacity +" spaces occupied");
+        checkinactivated = true;
+        checkinbutton.setStyle("-fx-background-color: #DE4B2A; ");
+    }
+    public void handleLot4 (ActionEvent event)
+    {
+        lot_info_textdisplay.setText(E34.name);
+        lot_info_spacesdisplay.setText(E34.occupancy + "/" + E34.capacity +" spaces occupied");
+        checkinactivated = true;
+        checkinbutton.setStyle("-fx-background-color: #DE4B2A; ");
+    }
+
 }
