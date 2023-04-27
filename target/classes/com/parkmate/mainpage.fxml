@@ -82,19 +82,19 @@
                                       <content>
                                         <AnchorPane prefHeight="565.0" prefWidth="487.0" style="-fx-background-color: white;">
                                              <children>
-                                                <Button fx:id="lot1button" focusTraversable="false" layoutX="38.0" layoutY="377.0" mnemonicParsing="false" onAction="#handleLot1" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 1">
+                                                <Button fx:id="lot1button" focusTraversable="false" layoutX="38.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleLot1" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 1">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font></Button>
-                                                <Button fx:id="lot2button" focusTraversable="false" layoutX="38.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleLot2" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 2">
+                                                <Button fx:id="lot2button" focusTraversable="false" layoutX="38.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleLot2" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 2">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font></Button>
-                                                <Button fx:id="lot3button" focusTraversable="false" layoutX="38.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleLot3" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 3">
+                                                <Button fx:id="lot3button" focusTraversable="false" layoutX="38.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleLot3" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 3">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font></Button>
-                                                <Button fx:id="lot4button" focusTraversable="false" layoutX="38.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleLot4" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 4">
+                                                <Button fx:id="lot4button" focusTraversable="false" layoutX="38.0" layoutY="377.0" mnemonicParsing="false" onAction="#handleLot4" prefHeight="58.0" prefWidth="410.0" style="-fx-background-color: #cccccc; -fx-background-radius: 20;" text="Lot 4">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font></Button>
